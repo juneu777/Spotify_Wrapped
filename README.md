@@ -1,6 +1,6 @@
 # Spotify Wrapped Android App
 
-An Android app that lets users sign in, connect to Spotify, generate a "wrapped" summary of their listening taste, and view recommended artists based on their Spotify history.
+An Android app that lets users sign in, connect to Spotify, generate a simple wrapped summary of their listening taste, and view recommended artists based on their Spotify history.
 
 The app uses Firebase for account management and saved wrapped data, then calls the Spotify Web API to retrieve top artists, top tracks, and related artist recommendations.
 
@@ -29,31 +29,6 @@ The app uses Firebase for account management and saved wrapped data, then calls 
 - Glide
 - AndroidX Navigation
 - ViewBinding
-
-## Project Structure
-
-```text
-.
-├── app/
-│   ├── build.gradle
-│   ├── google-services.json
-│   ├── libs/
-│   │   └── spotify-app-remote-release-0.8.0.aar
-│   └── src/main/
-│       ├── AndroidManifest.xml
-│       ├── java/com/cs2340/project2/
-│       │   ├── MainActivity.java
-│       │   ├── SpotifyWrappedData.java
-│       │   ├── Auth/
-│       │   └── ui/
-│       └── res/
-├── build.gradle
-├── gradle/
-├── gradle.properties
-├── gradlew
-├── gradlew.bat
-└── settings.gradle
-```
 
 ## Prerequisites
 
@@ -134,22 +109,3 @@ Run Android instrumentation tests, if tests are added:
 6. The Recommended tab shows related artist recommendations based on saved Spotify taste data.
 7. The Profile tab provides account actions such as logout, delete account, and update account details.
 
-## Important Files
-
-- `app/src/main/java/com/cs2340/project2/Auth/LoginActivity.java`: Firebase login flow
-- `app/src/main/java/com/cs2340/project2/Auth/SignupActivity.java`: Firebase signup flow
-- `app/src/main/java/com/cs2340/project2/Auth/ProfileActivity.java`: Profile, logout, delete account, and update navigation
-- `app/src/main/java/com/cs2340/project2/Auth/UpdateActivity.java`: Account update flow
-- `app/src/main/java/com/cs2340/project2/MainActivity.java`: Spotify authorization, Spotify API calls, Firestore reads/writes, and navigation setup
-- `app/src/main/java/com/cs2340/project2/SpotifyWrappedData.java`: Data model for top artists and tracks
-- `app/src/main/java/com/cs2340/project2/ui/home/HomeFragment.java`: Wrapped generation UI
-- `app/src/main/java/com/cs2340/project2/ui/dashboard/DashboardFragment.java`: Recommended artists UI
-- `app/src/main/res/navigation/mobile_navigation.xml`: Bottom navigation destinations
-
-## Notes
-
-- The app requests the Spotify scopes `user-read-email` and `user-top-read`.
-- The current app name in resources is `Project2`; update `app/src/main/res/values/strings.xml` if you want a different launcher/app title.
-- If Gradle reports that Java 11 is active, point Android Studio or `JAVA_HOME` to a Java 17 installation.
-- Placeholder tests and unused generated resources have been removed; add new tests under `app/src/test/` or `app/src/androidTest/` as needed.
-- Do not commit production Firebase or Spotify credentials to a public repository.
